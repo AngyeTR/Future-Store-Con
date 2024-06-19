@@ -1,0 +1,44 @@
+.ShoppingCart 
+    background-color: transparent 
+    border: none
+    cursor: pointer
+    color: $text-color
+    font-size: 1.1rem
+    position: relative
+    &__counter
+        position: absolute
+        border-radius: 50%
+        background-color: $main-contrast
+        padding: 0.25rem
+        top: 0
+        right: 0
+        z-index: 1
+        width: 0.5rem
+        height: 0.5rem
+        font-size: 0.5rem
+    & > svg
+     
+        width: 1.5rem
+        height: 1.5rem
+        fill: $text-color
+
+    &__items
+        position: absolute
+        background-color: $color-primary
+        border: 1px solid $border-color
+        border-radius: 8px
+        right: 0
+        max-width: 320px
+        min-width: 300px
+        padding: 1rem
+        // z-index: 5
+    &__buyButton
+        background-color: $main-contrast
+        color: $text-color
+        width:100%
+        padding: 1rem
+        border-radius: 8px
+        border: none
+        font-weight: bold
+        cursor: pointer
+        

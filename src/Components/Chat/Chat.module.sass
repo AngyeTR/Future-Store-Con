@@ -1,0 +1,54 @@
+.Chat
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  // height: 100vh
+  max-width: 32rem
+  padding: 6rem
+  display: flex
+  flex-direction: column
+  & > form
+    display: flex  
+    justify-content: center
+    align-items: center 
+    padding: 0
+    & > input
+      border-radius: 0.375rem
+      padding: 1rem
+      color: $text-color
+      font-size: 1rem
+      background-color: transparent 
+      
+    & > button
+        border: 1px solid $main-contrast
+        background: transparent
+        color: $text-color
+        padding: 0.5rem 2rem
+        ont-weight: 700
+        text-transform: uppercase
+        cursor: pointer
+        border-radius: 1.5rem
+  & > form > * + *
+    margin-left: 1rem
+
+.Main
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  // height: 100vh
+  max-width: 32rem
+  padding: 6rem
+  display: flex
+  flex-direction: column
+  & > section
+    margin-bottom: auto
+    & > h3 
+      color: $main-contrast
+      font-weight: 300
+    & > div
+        margin-bottom: 1rem
+        & > p
+          font-weight: 500
+          & > span
+            font-weight: 300
+            padding-left: 1rem

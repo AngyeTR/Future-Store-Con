@@ -14,8 +14,8 @@ export const ProductCard = ({ product }: ProductCardInterface) => {
           src={product.image}
           alt={product.title}
           quality={80}
-          height={320}
-          width={320}
+          height={280}
+          width={280}
           loading="eager"
         />
         <div className={styles.ProductCard__info}>

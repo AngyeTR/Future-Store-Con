@@ -14,8 +14,8 @@ export const ProductView = ({ product }: ProductViewProps) => {
         <Image
           loading="eager"
           src={product.image}
-          width={500}
-          height={500}
+          width={320}
+          height={320}
           quality={80}
           alt={product.title}
         />

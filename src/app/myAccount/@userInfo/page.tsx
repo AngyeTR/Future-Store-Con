@@ -1,5 +1,6 @@
 import { validateAccessToken } from "app/utils/auth/validateAccessToken";
 import styles from "../myAccount.module.sass"
+import { LogoutButton } from "app/Components";
 
 export default async function MyAccountPage() {
   const customer = await validateAccessToken();
@@ -11,6 +12,7 @@ export default async function MyAccountPage() {
         <h3>Bienvenido {customer?.firstName}</h3>
         <p>email: {customer?.email}</p>
       </section>
+      <LogoutButton/>
     </div>
   );
 }

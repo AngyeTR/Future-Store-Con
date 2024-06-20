@@ -1,3 +1,4 @@
+
 import styles from "./myAccount.module.sass"
 interface MyAccountLayoutProps {
     children: React.ReactNode;
@@ -12,7 +13,7 @@ interface MyAccountLayoutProps {
         <main className={styles.MyAccount__panels}>
         {props.userInfo}
         {props.ordersInfo}
-
+        
         </main>
         
       </div>

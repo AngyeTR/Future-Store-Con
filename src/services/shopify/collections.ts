@@ -4,6 +4,7 @@ import { env } from "app/config/env"
 
 export const getCollections = async () => {
     try{ 
+        console.log("coll url ", shopifyUrls.collections.all)
         const response = await fetch(shopifyUrls.collections.all, 
         {
         method: "GET",
@@ -23,6 +24,7 @@ export const getCollections = async () => {
 
 export const getCollectionProducts = async(id: string) => {
     try{
+        console.log("coll url pro",shopifyUrls.collections.products(id) )
         const response = await fetch(shopifyUrls.collections.products(id),
         {
             method: "GET",

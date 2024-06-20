@@ -13,7 +13,7 @@ export default async function Layout({ children }: { children: React.ReactNode }
         <ul className={styles.StoreLayout__list}>
         {
           collections.map((collection: any)=> (
-              <Link href={collection.handle} key={collection.id} className={styles.StoreLayout__chip}>{collection.title}</Link>
+              <Link href={`/store/${collection.handle}`} key={collection.id} className={styles.StoreLayout__chip}>{collection.title}</Link>
           ))
           }
         </ul>

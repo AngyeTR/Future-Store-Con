@@ -1,21 +1,6 @@
 import { getCustomerOrders } from "app/services/graphql/customer"
 import styles from "../myAccount.module.sass"
 
-// export default async function MyAccountPage() {
-//   const ordersInfo = await getCustomerOrders();
-//   return (
-//     <div>
-//       <section className={styles.OrderInfo}>
-//         <h2>Orders</h2>
-//         {ordersInfo.orders?.map((order) => (
-//           <p key={order.orderNumber}>{order.orderNumber}</p>
-//         ))}
-//       </section>
-//     </div>
-//   );
-// }
-
-
 type OrderType = {
   name: string;
   orderNumber: number;
@@ -33,9 +18,9 @@ type OrderType = {
 export default async function MyAccountPage() {
   const ordersInfo = await getCustomerOrders();
   return (
-    <div>
-      <h2>Your orders</h2>
-      <section>
+    <div >
+      <section className={styles.OrderInfo}>
+        <h2>Your orders</h2>
         {ordersInfo.orders?.map((order: OrderType) => (
           <a href={order.statusUrl} key={order.orderNumber} className={styles.OrderInfo}>
             <h3>Order {order.name}</h3>

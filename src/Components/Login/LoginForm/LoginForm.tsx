@@ -8,8 +8,6 @@ export const LoginForm = () => {
         const formData = new FormData(event.target)
         event?.preventDefault()
         await handleLogin(formData)
-
-
     }
   return (
     <div className={styles.NewAccountForm}  >

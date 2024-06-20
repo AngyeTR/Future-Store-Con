@@ -15,3 +15,4 @@ export { LoginForm } from './Login/LoginForm/LoginForm';
 export  default ShoppingCart 
 export { ShoppingCartItem } from './ShoppingCart/ShoppingCartItem';
 export { Chat } from "./Chat/Chat"
+export { LogoutButton } from './Shared/LogoutButton/LogoutButton';

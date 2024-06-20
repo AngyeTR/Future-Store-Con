@@ -12,9 +12,13 @@
     letter-spacing: 0.05em
     text-align: center
   &__panels
+    margin: 0 auto
+    max-width: 540px
     display: grid
-    grid-template-columns: 1fr 1fr
+    grid-template-columns: 1fr 
     grid-gap: 1.5rem
+    @include mobile
+      grid-template-columns: 1fr
     & > div
       border: 1px solid $border-color
       padding: 1rem
@@ -34,6 +38,9 @@
   padding: 0.75rem
   border-radius: 0.5rem
   font-weight: 300
+  & > h2 
+    font-size: 2rem
+    color: $main-contrast
   & > h3
     margin-top: 0
   &:last-child
@@ -45,7 +52,6 @@
 .UserInfo
   // text-decoration: none
   color: $main-contrast
-  margin-bottom: 1rem
   display: block
   padding: 0.75rem
   border-radius: 0.5rem

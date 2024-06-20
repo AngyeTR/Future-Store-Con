@@ -2,14 +2,19 @@
 import { useState } from "react";
 import styles from "./NewAccountForm.module.sass";
 import { handleCreateUser } from "app/actions";
+import { useError } from "app/hooks/useError"
 
 export const NewAccountForm = () => {
+  const {userError, addUserError} = useError()
   const [errors, setErrors] = useState<string[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
     const handleSubmit = async (event: any)=>{
         event.preventDefault()
+        addUserError("")
         const formData = new FormData(event.target)
-        await handleCreateUser(formData)
+        const error = await handleCreateUser(formData)
+        console.log("creation error", error)
+        addUserError(error)
     }
 
   return (
@@ -23,6 +28,7 @@ export const NewAccountForm = () => {
         <input type="password" name="password" placeholder="password" disabled={loading} />
         <input type="password" name="password_confirmation" placeholder="re-type password" disabled={loading} />
         <input type="submit" name="submit" value="Crear cuenta" disabled={loading} />
+        <p>{userError}</p>
       </form>
       {errors.length > 0 && 
         <div>

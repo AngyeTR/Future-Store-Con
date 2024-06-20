@@ -48,7 +48,7 @@ export const useShoppingCart = create<Store>()((set) => ({
     const newCart = currentCart.filter((item) => item.id !== cartItem.id)
     saveArrayToLocalStorage(newCart)
     return ({ cart: newCart })
-  })
+  }),
 }))
 
 

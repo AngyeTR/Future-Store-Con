@@ -8,8 +8,7 @@ import { cookies } from "next/headers"
 import { redirect } from "next/navigation"
 
 export const handleCreateUser = async (formData: FormData) => {
- 
-    const formDataObject = Object.fromEntries(formData)
+  const formDataObject = Object.fromEntries(formData)
   delete formDataObject["password_confirmation"]
   const graphqlClient = GraphQLClientSingleton.getInstance().getClient()
   const variables = {
@@ -26,18 +25,29 @@ export const handleCreateUser = async (formData: FormData) => {
       }
     }
   } = await graphqlClient.request(createUserMutation, variables)
+  console.log("creado", customerCreate)
   const { customer } = customerCreate
   if(customer?.firstName){
     const accessToken = await createAccessToken(formDataObject.email as string, formDataObject.password as string)
-    if(accessToken){redirect("/store")}
-  }   
+    if(accessToken){
+      redirect("/store")}
+    return ""
+  }  
+  else{
+    return("Ups! something went wrong. Please check your information and try again") 
+  } 
 }
 
 export const handleLogin = async (formData: FormData) => {
   const formDataObject = Object.fromEntries(formData)
-  const accessToken= await createAccessToken(formDataObject.email as string, formDataObject.password as string )
-  if(accessToken){
+  try{
+    const accessToken = await createAccessToken(formDataObject.email as string, formDataObject.password as string )
+    if(accessToken){
     redirect("/store")
+    return ""
+  }}
+  catch(error){
+    return("Ups! something went wrong. Please check your credentials and try again") 
   }
 }
 

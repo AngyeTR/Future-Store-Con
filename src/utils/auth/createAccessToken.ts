@@ -16,6 +16,7 @@ export const createAccessToken = async (email: string, password: string ) =>{
         "email": email,
         "password": password
     })
+    console.log("log", customerAccessTokenCreate)
 
     const { accessToken, expiresAt} = customerAccessTokenCreate?.customerAccessToken
     if (accessToken){
@@ -27,5 +28,6 @@ export const createAccessToken = async (email: string, password: string ) =>{
         })
         
         return accessToken
-    }
+    } 
+   
 }

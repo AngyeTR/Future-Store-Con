@@ -3,6 +3,11 @@
   grid-template-columns: auto 1fr
   grid-gap: 1.25rem
   margin-top: 2rem
+  @include tablet
+    grid-template-columns: 1fr
+    margin-top: 1rem
+  @include mobile
+    grid-template-columns: auto 1fr
   &__itemsCount
     display: flex
     column-gap: 0.5rem
@@ -24,10 +29,13 @@
       border: none
       padding: 0 2rem
       cursor: pointer
+      
+
     & > p
       margin: 0px
       font-size: 1.2rem
       font-weight: 400
+      
   &__form
     width: 100%
   &__submit
@@ -47,6 +55,6 @@
     font-size: 1.2rem
     cursor: pointer
     color: white
-    margin-top: auto
+    margin-top: 0
     @include mobile
       font-size: 1rem
